@@ -28,7 +28,7 @@ return {
       enabled = true,
       message_template = " <summary> • <date> • <author> • <<sha>>",
       date_format = "%r",
-      virtual_text_column = 1,    
+      virtual_text_column = 1,
     },
   },
 
@@ -114,7 +114,7 @@ return {
       },
     },
   },
-  
+
   {
     "vinnymeller/swagger-preview.nvim",
     cmd = { "SwaggerPreview", "SwaggerPreviewStop", "SwaggerPreviewToggle" },
