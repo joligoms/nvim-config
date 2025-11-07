@@ -21,7 +21,7 @@ vim.api.nvim_create_autocmd("VimEnter", {
 })
 
 M.base46 = {
-  theme = "wombat",
+  theme = "chadracula-evondev",
   transparency = true,
 
   -- hl_override = {
@@ -64,6 +64,10 @@ M.ui = {
 M.nvdash = {
   load_on_startup = true,
   header = { ":(){ :|:& };: <CR>" },
+}
+
+M.lsp = {
+  signature = true,
 }
 
 -- M.ui = {
