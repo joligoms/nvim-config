@@ -144,6 +144,7 @@ return {
             ".goosehints",
             ".rules",
             ".windsurfrules",
+            ".copilot-instructions.md",
             ".github/copilot-instructions.md",
             "AGENT.md",
             "AGENTS.md",
