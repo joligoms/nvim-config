@@ -9,6 +9,7 @@ local servers = {
   copilot = {},
   markdown = {},
   markdown_inline = {},
+  yamlls = {},
 }
 
 local on_attach = function(client, bufnr)
