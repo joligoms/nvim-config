@@ -6,8 +6,7 @@ local servers = {
   cssls = {},
   ts_ls = {},
   tailwindcss = {},
-  ["copilot-language-server"] = { enabled = false },
-  ["copilot_lsp"] = {},
+  copilot = {},
   markdown = {},
   markdown_inline = {},
 }
