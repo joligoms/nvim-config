@@ -1,6 +1,7 @@
 require("nvchad.configs.lspconfig").defaults()
 local nvlsp = require "nvchad.configs.lspconfig"
 
+--- @type table<string, {cfg?: vim.lsp.Config, enabled?: boolean}>
 local servers = {
   html = {},
   cssls = {},
@@ -10,6 +11,40 @@ local servers = {
   markdown = {},
   markdown_inline = {},
   yamlls = {},
+  ["helm_ls"] = {
+    cfg = {
+      filetypes = { "helm", "helmfile", "yaml.helm", "yaml.helmvalues" },
+      settings = {
+        ["helm-ls"] = {
+          logLevel = "info",
+          valuesFiles = {
+            mainValuesFile = "values.yaml",
+            lintOverlayValuesFile = "values.lint.yaml",
+            additionalValuesFilesGlobPattern = "values*.yaml",
+          },
+          helmLint = {
+            enabled = true,
+            ignoredMessages = {},
+          },
+          yamlls = {
+            enabled = true,
+            enabledForFilesGlob = "*.{yaml,yml}",
+            diagnosticsLimit = 50,
+            showDiagnosticsDirectly = false,
+            path = "yaml-language-server",
+            initTimeoutSeconds = 3,
+            config = {
+              schemas = {
+                kubernetes = "templates/**",
+              },
+              completion = true,
+              hover = true,
+            },
+          },
+        },
+      },
+    },
+  },
 }
 
 local on_attach = function(client, bufnr)
@@ -31,10 +66,10 @@ local on_attach = function(client, bufnr)
 
   if client.name == "ts_ls" then
     vim.keymap.set("n", "<leader>li", function()
-      client:exec_cmd({
+      client:exec_cmd {
         command = "_typescript.organizeImports",
         arguments = { vim.api.nvim_buf_get_name(0) },
-      })
+      }
     end, { buffer = bufnr, desc = "Organize Imports" })
   end
 end

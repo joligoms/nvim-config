@@ -34,6 +34,19 @@ return {
 
   {
     "nvim-treesitter/nvim-treesitter",
+    config = function()
+      vim.filetype.add {
+        extension = {
+          gotmpl = "gotmpl",
+        },
+        pattern = {
+          [".*%.ya?ml"] = "helm",
+          [".*/templates/.*%.tpl"] = "helm",
+          [".*/templates/.*%.ya?ml"] = "helm",
+          ["helmfile.*%.ya?ml"] = "helm",
+        },
+      }
+    end,
     opts = {
       ensure_installed = {
         "lua",
@@ -45,6 +58,8 @@ return {
         "typescript",
         "css",
         "yaml",
+        "helm",
+        "gotmpl",
       },
     },
   },
