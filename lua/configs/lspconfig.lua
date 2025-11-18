@@ -10,6 +10,7 @@ local servers = {
   copilot = {},
   markdown = {},
   markdown_inline = {},
+  phpactor = {},
   yamlls = {},
   ["helm_ls"] = {
     cfg = {
