@@ -42,3 +42,4 @@ local function live_grep_with_telescope()
 end
 
 map({ "n", "v" }, "<leader>fg", live_grep_with_telescope, { desc = "live grep with Telescope", silent = true })
+map("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", { desc = "live grep with Telescope", silent = true })

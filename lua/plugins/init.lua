@@ -11,6 +11,27 @@ return {
       require "configs.lspconfig"
     end,
   },
+
+  {
+    "mason-org/mason-lspconfig.nvim",
+    opts = {
+      ensure_installed = {
+        "lua_ls",
+        "html-lsp",
+        "css-lsp",
+        "marksman",
+        "tailwindcss-language-server",
+        "typescript-language-server",
+        "yaml-language-server",
+        "helm-ls",
+      }
+    },
+    dependencies = {
+      { "mason-org/mason.nvim", opts = {} },
+      "neovim/nvim-lspconfig",
+    },
+  },
+
   {
     "windwp/nvim-ts-autotag",
     opts = {
