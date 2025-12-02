@@ -21,7 +21,7 @@ vim.api.nvim_create_autocmd("VimEnter", {
 })
 
 M.base46 = {
-  theme = "chadracula-evondev",
+  theme = "wombat",
   transparency = true,
 
   -- hl_override = {
