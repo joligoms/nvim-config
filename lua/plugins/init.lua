@@ -141,6 +141,7 @@ return {
 
   {
     "olimorris/codecompanion.nvim",
+    version = "v17.33.0",
     opts = {
       strategies = {
         chat = {
@@ -159,7 +160,6 @@ return {
             ".cursorrules",
             ".goosehints",
             ".rules",
-            ".windsurfrules",
             ".copilot-instructions.md",
             ".github/copilot-instructions.md",
             "AGENT.md",
