@@ -5,8 +5,10 @@ return {
     opts = {
       strategies = {
         chat = {
-          name = "copilot",
-          model = "claude-sonnet-4-5-20250929",
+          adapter = {
+            name = "copilot",
+            model = "gpt-5-mini",
+          },
         },
         inline = {
           adapter = "copilot",
