@@ -35,6 +35,9 @@ return {
           },
         },
       },
+      display = {
+        chat = { window = { position = "left", width = 0.3 } },
+      },
     },
     event = "VeryLazy",
     dependencies = {
