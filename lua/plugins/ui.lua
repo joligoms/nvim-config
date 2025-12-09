@@ -13,7 +13,17 @@ return {
       picker = {
         sources = {
           explorer = {
+            hidden = true,
+            ignored = true,
             layout = { layout = { position = "right" } },
+          },
+          files = {
+            hidden = true,
+            ignored = true,
+            follow = true,
+          },
+          git_files = {
+            untracked = true,
           },
         },
       },
