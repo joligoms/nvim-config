@@ -41,7 +41,22 @@ return {
       "nvim-lua/plenary.nvim",
     },
     keys = {
-      { "<leader>cc", "<cmd>CodeCompanionChat Toggle<cr>", desc = "Code Companion Chat" },
+      { "<leader>an", "<cmd>CodeCompanionChat<cr>", desc = "Code Companion New Chat" },
+      { "<leader>ac", "<cmd>CodeCompanionChat Toggle<cr>", desc = "Code Companion Chat" },
+    },
+  },
+
+  -- For pasting images from clipboard
+  {
+    "HakonHarnes/img-clip.nvim",
+    opts = {
+      filetypes = {
+        codecompanion = {
+          prompt_for_file_name = false,
+          template = "[Image]($FILE_PATH)",
+          use_absolute_path = true,
+        },
+      },
     },
   },
 }
