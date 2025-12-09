@@ -19,7 +19,6 @@ return {
           },
           files = {
             hidden = true,
-            ignored = true,
             follow = true,
           },
           git_files = {
