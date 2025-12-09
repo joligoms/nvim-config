@@ -3,5 +3,10 @@
 -- Add any additional keymaps here
 
 local map = vim.keymap.set
+map({ "i" }, "jk", "<ESC>")
 
-map("i", "jk", "<ESC>")
+-- Terminal mappings
+map("t", "<C-x>", [[<C-\><C-n>"]], { desc = "Terminal -> Normal" })
+map({ "n", "t" }, "<M-h>", function()
+  Snacks.terminal.toggle()
+end, { desc = "Toggle Horizontal Terminal" })
