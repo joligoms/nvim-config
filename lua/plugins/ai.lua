@@ -3,6 +3,20 @@ return {
     "olimorris/codecompanion.nvim",
     version = "v17.33.0",
     opts = {
+      extensions = {
+        mcphub = {
+          callback = "mcphub.extensions.codecompanion",
+          opts = {
+            make_tools = true,
+            show_server_tools_in_chat = true,
+            add_mcp_prefix_to_tool_names = false,
+            show_result_in_chat = true,
+            format_tool = nil,
+            make_vars = true,
+            make_slash_commands = true,
+          },
+        },
+      },
       strategies = {
         chat = {
           adapter = {
@@ -48,7 +62,16 @@ return {
       { "<leader>ac", "<cmd>CodeCompanionChat Toggle<cr>", desc = "Code Companion Chat" },
     },
   },
-
+  {
+    "ravitemer/mcphub.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    build = "pnpm install -g mcp-hub@latest",
+    config = function()
+      require("mcphub").setup()
+    end,
+  },
   -- For pasting images from clipboard
   {
     "HakonHarnes/img-clip.nvim",
