@@ -10,3 +10,9 @@ map("t", "<C-x>", [[<C-\><C-n>"]], { desc = "Terminal -> Normal" })
 map({ "n", "t" }, "<M-h>", function()
   Snacks.terminal.toggle()
 end, { desc = "Toggle Horizontal Terminal" })
+
+local CustomCli = require("custom.cli")
+
+map("n", "<leader>p", function()
+  CustomCli.posting()
+end, { desc = "Run Posting cli app" })
