@@ -11,6 +11,9 @@ return {
         },
       },
       picker = {
+        projects = {
+          patterns = { ".git", "_darcs", ".hg", ".bzr", ".svn" },
+        },
         sources = {
           explorer = {
             hidden = true,
@@ -19,10 +22,13 @@ return {
           },
           files = {
             hidden = true,
-            follow = true,
+            follow = false,
           },
           git_files = {
             untracked = true,
+          },
+          projects = {
+            patterns = { ".git", "_darcs", ".hg", ".bzr", ".svn" },
           },
         },
       },
