@@ -5,4 +5,8 @@ return {
       colorscheme = "catppuccin",
     },
   },
+  {
+    "mason-org/mason.nvim",
+    opts = { ensure_installed = { "prettier" } },
+  },
 }
