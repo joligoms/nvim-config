@@ -1,23 +1,20 @@
 return {
   {
     "olimorris/codecompanion.nvim",
-    version = "v17.33.0",
+    version = "v19.3.0",
     opts = {
-      extensions = {
-        -- mcphub = {
-        --   callback = "mcphub.extensions.codecompanion",
-        --   opts = {
-        --     make_tools = true,
-        --     show_server_tools_in_chat = true,
-        --     add_mcp_prefix_to_tool_names = false,
-        --     show_result_in_chat = true,
-        --     format_tool = nil,
-        --     make_vars = true,
-        --     make_slash_commands = true,
-        --   },
-        -- },
+      adapters = {
+        http = {
+          anthropic = function()
+            return require("codecompanion.adapters").extend("anthropic", {
+              env = {
+                api_key = "CLAUDE_CODE_OAUTH_TOKEN",
+              },
+            })
+          end,
+        },
       },
-      strategies = {
+      interactions = {
         chat = {
           adapter = {
             name = "copilot",
@@ -26,6 +23,18 @@ return {
         },
         inline = {
           adapter = "copilot",
+        },
+      },
+      extensions = {
+        history = {
+          enabled = true,
+          opts = {
+            dir_to_save = vim.fn.stdpath("data") .. "/codecompanion_chats.json",
+            title_generation_opts = {
+              adapter = "copilot",
+              model = "gpt-5-mini",
+            },
+          },
         },
       },
       memory = {
@@ -56,6 +65,7 @@ return {
     event = "VeryLazy",
     dependencies = {
       "nvim-lua/plenary.nvim",
+      "ravitemer/codecompanion-history.nvim",
     },
     keys = {
       { "<leader>an", "<cmd>CodeCompanionChat<cr>", desc = "Code Companion New Chat" },
