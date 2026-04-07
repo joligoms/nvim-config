@@ -8,3 +8,5 @@ vim.opt.number = true
 vim.opt.relativenumber = false
 
 vim.g.lazyvim_prettier_needs_config = false
+
+vim.g.autoformat = true
