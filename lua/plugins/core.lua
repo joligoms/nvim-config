@@ -16,6 +16,14 @@ return {
 
   {
     "mason-org/mason.nvim",
-    opts = { ensure_installed = { "prettier" } },
+    opts = {
+      ensure_installed = {
+        "prettier",
+        "phpactor",
+        "phpcs",
+        "php-cs-fixer",
+        "css-lsp",
+      },
+    },
   },
 }

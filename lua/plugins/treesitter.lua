@@ -7,6 +7,7 @@ return {
       folds = { enable = true }, ---@type lazyvim.TSFeat
       ensure_installed = {
         "bash",
+        "css",
         "c",
         "diff",
         "graphql",
@@ -22,6 +23,7 @@ return {
         "markdown",
         "markdown_inline",
         "printf",
+        "php",
         "python",
         "query",
         "regex",
