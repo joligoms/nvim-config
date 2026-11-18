@@ -1,5 +1,12 @@
 return {
-  { "ellisonleao/gruvbox.nvim" },
+  {
+    "ellisonleao/gruvbox.nvim",
+    priority = 1000,
+    opts = {
+      contrast = "", -- "hard" | "soft" | "" (medium)
+      transparent_mode = true,
+    },
+  },
   {
     "catppuccin/nvim",
     name = "catppuccin",
