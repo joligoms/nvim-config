@@ -44,6 +44,8 @@ return {
           },
           projects = {
             patterns = { ".git", "_darcs", ".hg", ".bzr", ".svn" },
+            -- Extra project roots live in lua/plugins/local.lua (git-ignored),
+            -- because they name client projects.
           },
         },
       },

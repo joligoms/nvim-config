@@ -1,2 +1,4 @@
 lazy-lock.json
 .env
+# Machine-specific overrides (project paths, terminal quirks, etc.)
+lua/plugins/local.lua
