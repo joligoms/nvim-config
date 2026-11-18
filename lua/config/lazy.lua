@@ -33,6 +33,10 @@ require("lazy").setup({
     -- version = "*", -- try installing the latest stable version for plugins that support semver
   },
   install = { colorscheme = { "tokyonight", "habamax" } },
+  -- image.nvim ships a rockspec that pulls the `magick` luarock (needs Lua 5.1 +
+  -- luarocks). We use image.nvim's `processor = "magick_cli"` instead, which shells
+  -- out to the `magick` binary and needs no rock, so disable lazy's luarocks support.
+  rocks = { enabled = false },
   checker = {
     enabled = true, -- check for plugin updates periodically
     notify = false, -- notify on update

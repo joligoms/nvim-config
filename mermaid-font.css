@@ -1,0 +1,9 @@
+/* Force mermaid-cli to use an already-installed local font.
+ * Mermaid's default stack ("trebuchet ms", verdana, arial, sans-serif) isn't
+ * present, so Chromium falls back to a late-loading web font and screenshots
+ * the diagram before it loads -> labels rasterize at zero width (blank boxes),
+ * especially at low --scale. Pinning an installed font removes that race.
+ * Both families below are confirmed via `fc-match`. */
+* {
+  font-family: "Noto Sans", "Nimbus Sans", sans-serif !important;
+}
